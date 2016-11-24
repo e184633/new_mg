@@ -1,0 +1,572 @@
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="http://wcfcourier.com/app/special/data_tables/media/css/demo_page.css">
+<link rel="stylesheet" type="text/css" href="http://wcfcourier.com/app/special/data_tables/media/css/demo_table.css">
+<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link href="jquery.datatables.yadcf.css" rel="stylesheet" type="text/css" />
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script src="jquery.dataTables.yadcf.js"></script>
+<style>
+tfoot {
+    display: table-header-group;
+}
+table {
+  font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	float: left;
+  /*table-layout: fixed;*/
+}
+table th, table td {
+    	text-align: center;
+}
+ 
+th, td {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 12px;
+}
+ 
+label {
+	width: 100%;
+	text-align: left;
+}
+ 
+table th {
+	font-weight: bold;
+}
+ 
+table thead th {
+    vertical-align: middle;
+}
+ 
+label, input, button, select, textarea {
+    line-height: 30px;
+}
+input, textarea, select, .uneditable-input {
+    height: 25px;
+    line-height: 25px;
+}
+ 
+select {
+    width: 100px;
+}
+ 
+.dataTables_length {
+    padding-left: 10px;
+}
+.dataTables_filter {
+	padding-right: 10px;
+}
+ 
+</style>
+<script language = "javascript" type="text/javascript">
+  var tf01 = new TF('five_year');
+  tf01.AddGrid();
+</script>
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-1.12.3.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function() {
+$('#five_year').dataTable({
+  "bJQueryUI": true,
+
+"iDisplayLength": 25
+});
+$('#one_year').dataTable({
+"iDisplayLength": 25
+});
+});
+</script>
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#five_year tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+    var table = $('#five_year').DataTable();
+    table.columns().every( function () {
+        var that = this;
+ 
+        $( 'input', this.footer() ).on( 'keyup change', function () {
+            if ( that.search() !== this.value ) {
+                that
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
+} );
+</script>
+
+</head>
+
+<body>
+
+<br />
+
+<h3>MORTGAGES DATABASE</h3>
+<!-- <style type="text/css">
+  table.tableizer-table {
+    font-size: 12px;
+    border: 1px solid #CCC; 
+    font-family: Arial, Helvetica, sans-serif;
+  } 
+  .tableizer-table td {
+    padding: 4px;
+    margin: 3px;
+    border: 1px solid #CCC;
+  }
+  .tableizer-table th {
+    background-color: #104E8B; 
+    color: #FFF;
+    font-weight: bold;
+  }
+</style> -->
+<table id="five_year" class="display" cellspacing="0" width="100%" >
+   <thead>
+      <th>Registration Number</th>
+      <th>Company Name</th>
+      <th>Insolvency </th>
+      <th>Director name</th>
+      <th>Date Created</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Date Satisfied</th>
+      <th> Duration (m) </th>
+      <th>Particulars</th>
+      <th>Persons Entitled</th>
+      <!-- <th>Address</th> -->
+   </thead>
+   <tfoot>
+     <th>Registration Number</th>
+      <th>Company Name</th>
+      <th>Insolvency </th>
+      <th>Director name</th>
+      <th>Date Created</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Date Satisfied</th>
+      <th> Duration (m) </th>
+      <th>Particulars</th>
+      <th>Persons Entitled</th>
+   </tfoot>
+   <tr>
+      <td>00004197</td>
+      <td>PA GROUP LIMITED</td>
+      <td>FALSE</td>
+      <td>ALLINSON, Geraldine Ruth Pratt<<<<<BEATTY, Kevin Joseph<<<<<BROOKS, Rebekah Mary<<<<<COBBOLD, Timothy Russell<<<<<DOWSETT, Andrew John<<<<<ETHELSTON, Edward Philip<<<<<FITZPATRICK, Dominic Joseph<<<<<FOX, Simon Richard<<<<<MACLENNAN, Murdoch<<<<<MARSHALL, Clive Paul<<<<<WATSON, Anthony Gerard<<<<<</td>
+      <td>24/10/2014</td>
+      <td>A registered charge</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>292 vauxhall bridge road london t/no.81598.</td>
+      <td>Richard Charles Henry<<<<<John Spencer<<<<<Jonathan Grun<<<<<James William Donnelley<<<<<</td>
+      <!-- <td><a href="http://maps.google.com/?q=122-124 golden lane london">Location</a></td> -->
+   </tr>
+   <tr>
+      <td>00020080</td>
+      <td>TOYNBEE HALL</td>
+      <td>FALSE</td>
+      <td>ALLAN, Richard Bellerby<<<<<CORBETT, Clare Katharine<<<<<CORNER, Julian<<<<<DAVIES, Emma-Jane<<<<<OSMANI, Hanif Mohammed<<<<<SQUIRES, Sarah Janet<<<<<SWADE, Katherine Ruth<<<<<WARNER, David Timothy<<<<<ZAMAN, Kawsar<<<<<ZERA, Annette<<<<<</td>
+      <td>02/02/2015</td>
+      <td>A registered charge</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>F/H toynbee hall 28 commercial street london t/no EGL461557.</td>
+      <td>The Trustees of the National Heritage Memorial Fund<<<<<</td>
+   </tr>
+   <tr>
+      <td>00029022</td>
+      <td>CLARIDGE'S HOTEL LIMITED</td>
+      <td>FALSE</td>
+      <td>BAKHOS, Fady<<<<<CUNNINGHAM, Liam<<<<<</td>
+      <td>27/10/2015</td>
+      <td>A registered charge</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>F/H property k/a claridge's hotel 45-47 brook street london t/no NGL633367 and l/h property k/a 21 three kings yard london t/no NGL903204 please see image for details of further land (including buildings), ship, aircraft or intellectual property charged.</td>
+      <td>Qib (UK) PLC (the Security Agent)<<<<<</td>
+   </tr>
+   <tr>
+      <td>00029022</td>
+      <td>CLARIDGE'S HOTEL LIMITED</td>
+      <td>FALSE</td>
+      <td>BAKHOS, Fady<<<<<CUNNINGHAM, Liam<<<<<</td>
+      <td>23/01/2015</td>
+      <td>A registered charge</td>
+      <td>fully-satisfied</td>
+      <td>11/11/2015</td>
+      <td>9</td>
+      <td>N/A</td>
+      <td>Capita Trust Company Limited as Common Security Trustee (As Trustee for Each of the Finance Parties)<<<<<</td>
+   </tr>
+   <tr>
+      <td>00029022</td>
+      <td>CLARIDGE'S HOTEL LIMITED</td>
+      <td>FALSE</td>
+      <td>BAKHOS, Fady<<<<<CUNNINGHAM, Liam<<<<<</td>
+      <td>23/01/2015</td>
+      <td>A registered charge</td>
+      <td>fully-satisfied</td>
+      <td>11/11/2015</td>
+      <td>9</td>
+      <td>Claridge's hotel brook street london t/no NGL633367.</td>
+      <td>Capita Trust Company Limited as Common Security Trustee (As Trustee for Each of the Finance Parties)<<<<<</td>
+   </tr>
+   <tr>
+      <td>00029022</td>
+      <td>CLARIDGE'S HOTEL LIMITED</td>
+      <td>FALSE</td>
+      <td>BAKHOS, Fady<<<<<CUNNINGHAM, Liam<<<<<</td>
+      <td>28/12/2012</td>
+      <td>Debenture</td>
+      <td>fully-satisfied</td>
+      <td>11/11/2015</td>
+      <td>34</td>
+      <td>Fixed and floating charge over the undertaking and all property and assets present and future, including goodwill, book debts, uncalled capital, buildings, fixtures, fixed plant & machinery see image for full details.</td>
+      <td>Capita Trust Company Limited<<<<<</td>
+   </tr>
+   <tr>
+      <td>00029022</td>
+      <td>CLARIDGE'S HOTEL LIMITED</td>
+      <td>FALSE</td>
+      <td>BAKHOS, Fady<<<<<CUNNINGHAM, Liam<<<<<</td>
+      <td>28/12/2012</td>
+      <td>Legal charge</td>
+      <td>fully-satisfied</td>
+      <td>11/11/2015</td>
+      <td>34</td>
+      <td>Claridge's hotel, brook street, london t/no NGL633367.</td>
+      <td>Capita Trust Company Limited<<<<<</td>
+   </tr>
+   <tr>
+      <td>00029022</td>
+      <td>CLARIDGE'S HOTEL LIMITED</td>
+      <td>FALSE</td>
+      <td>BAKHOS, Fady<<<<<CUNNINGHAM, Liam<<<<<</td>
+      <td>01/04/2011</td>
+      <td>Debenture</td>
+      <td>fully-satisfied</td>
+      <td>06/02/2013</td>
+      <td>22</td>
+      <td>For details of properties charged, please refer to form MG01, fixed and floating charge over the undertaking and all property and assets present and future, including goodwill, book debts, uncalled capital, buildings, fixtures, fixed plant & machinery see image for full details.</td>
+      <td>Anglo Irish Bank Corporation Limited<<<<<</td>
+   </tr>
+   <tr>
+      <td>00029423</td>
+      <td>WHITBREAD GROUP PLC</td>
+      <td>FALSE</td>
+      <td>BRITTAIN, Alison Jane<<<<<CADBURY, Nicholas Theodore<<<<<SMALLEY, Louise Helen<<<<<</td>
+      <td>22/05/2015</td>
+      <td>A registered charge</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>(1) london euston premier inn, 1 duke's road, london WC1H 9FJ.</td>
+      <td>Whitbread Pension Fund Trustees as Trustee of the Whitbread Group Pension Fund<<<<<</td>
+   </tr>
+   <tr>
+      <td>00029423</td>
+      <td>WHITBREAD GROUP PLC</td>
+      <td>FALSE</td>
+      <td>BRITTAIN, Alison Jane<<<<<CADBURY, Nicholas Theodore<<<<<SMALLEY, Louise Helen<<<<<</td>
+      <td>17/04/2013</td>
+      <td>A registered charge</td>
+      <td>fully-satisfied</td>
+      <td>28/05/2015</td>
+      <td>25</td>
+      <td>The f/h or l/h property being london euston premier inn 1 duke's road london t/no LN162103, bristol city centre (haymarket) premier inn the haymarket bristol t/no BL13711 and london tower bridge premier inn 159 tower bridge road london t/no TGL4992 (for full list of properties please see form MR01). Notification of addition to or amendment of charge.</td>
+      <td>Whitbread Pension Trustees<<<<<</td>
+   </tr>
+   <tr>
+      <td>00029423</td>
+      <td>WHITBREAD GROUP PLC</td>
+      <td>FALSE</td>
+      <td>BRITTAIN, Alison Jane<<<<<CADBURY, Nicholas Theodore<<<<<SMALLEY, Louise Helen<<<<<</td>
+      <td>25/02/2010</td>
+      <td>Legal charge</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>The mortgaged property,the chattels first floating charge all its rights or interest in the chattels see image for full details.</td>
+      <td>Whitbread Pension Trustees (The "Trustees")<<<<<</td>
+   </tr>
+   <tr>
+      <td>00031105</td>
+      <td>BLACKFRIARS SETTLEMENT</td>
+      <td>FALSE</td>
+      <td>BUKOLA, Michael<<<<<CHANDLER, Brian<<<<<COLLINS, Graham Keith<<<<<DOWLING, Vanessa<<<<<HEATHFIELD, Heather, Dr<<<<<MOMORI, Nashiru<<<<<NORTHEND, Jessica<<<<<SILVERMAN, Barry Henry<<<<<SOANES, Sharon Cleopatra<<<<<WHEELER, Margaret Eileen Joyce, Baroness Wheeler Of Blackfriars<<<<<</td>
+      <td>08/05/2013</td>
+      <td>A registered charge</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>L/H land and buildings k/a 1-5 rushworth street london t/n TGL375065. Notification of addition to or amendment of charge.</td>
+      <td>Adventure Capital Fund<<<<<</td>
+   </tr>
+   <tr>
+      <td>00046188</td>
+      <td>MARY WARD SETTLEMENT</td>
+      <td>FALSE</td>
+      <td>BATES, Frances Clare<<<<<BREWSHER, James Robert<<<<<BREWSTER, Maureen Eileen<<<<<CLYNE, Peter Robin<<<<<HILL, Austin, Dr<<<<<HORSUP, Alexine<<<<<HUMPHREYS, Alan Stuart<<<<<KAR, Nicole Louise<<<<<LOWTON, Alison Jane<<<<<NADA RAJAN, Raja Rajan<<<<<PECK, Andrew Michael<<<<<WATTERS, Kathryn Mary, Dr<<<<<WILLIAMS, Andrea<<<<<</td>
+      <td>23/07/2015</td>
+      <td>A registered charge</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>Land being 10-11 great turnstile, london (WC1V 7JU) registered at the land registry with title number NGL912085.</td>
+      <td>The London Pensions Fund Authority<<<<<</td>
+   </tr>
+   <tr>
+      <td>00046188</td>
+      <td>MARY WARD SETTLEMENT</td>
+      <td>FALSE</td>
+      <td>BATES, Frances Clare<<<<<BREWSHER, James Robert<<<<<BREWSTER, Maureen Eileen<<<<<CLYNE, Peter Robin<<<<<HILL, Austin, Dr<<<<<HORSUP, Alexine<<<<<HUMPHREYS, Alan Stuart<<<<<KAR, Nicole Louise<<<<<LOWTON, Alison Jane<<<<<NADA RAJAN, Raja Rajan<<<<<PECK, Andrew Michael<<<<<WATTERS, Kathryn Mary, Dr<<<<<WILLIAMS, Andrea<<<<<</td>
+      <td>03/12/2010</td>
+      <td>Legal charge</td>
+      <td>fully-satisfied</td>
+      <td>02/02/2016</td>
+      <td>61</td>
+      <td>F/H property k/a dolphin court 10-11 great turnstile street london t/no NGL912085.</td>
+      <td>The Charity Bank Limited<<<<<</td>
+   </tr>
+   <tr>
+      <td>00046188</td>
+      <td>MARY WARD SETTLEMENT</td>
+      <td>FALSE</td>
+      <td>BATES, Frances Clare<<<<<BREWSHER, James Robert<<<<<BREWSTER, Maureen Eileen<<<<<CLYNE, Peter Robin<<<<<HILL, Austin, Dr<<<<<HORSUP, Alexine<<<<<HUMPHREYS, Alan Stuart<<<<<KAR, Nicole Louise<<<<<LOWTON, Alison Jane<<<<<NADA RAJAN, Raja Rajan<<<<<PECK, Andrew Michael<<<<<WATTERS, Kathryn Mary, Dr<<<<<WILLIAMS, Andrea<<<<<</td>
+      <td>03/12/2010</td>
+      <td>Charge over property</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>All that f/h land and buildings k/a 10-11 great turnstile london t/no. NGL912085 together with all rights relating to the property and all benefits in respect of insurances and all claims and returns of premiums in respect thereof.</td>
+      <td>Futurebuilders England Limited<<<<<</td>
+   </tr>
+   <tr>
+      <td>00075064</td>
+      <td>CABRINI CHILDREN'S SOCIETY</td>
+      <td>TRUE</td>
+      <td>BROWN, Paul Anthony<<<<<DIBBS, Paul Victor John<<<<<HARVEY BROWNE, Graham Peter<<<<<ROTHON, Nicholas John, Monsignor<<<<<TWIST, Neil Nicholas<<<<<</td>
+      <td>03/09/2014</td>
+      <td>A registered charge</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>F/H the bird infant welfare centre, 616 old kent road, london t/no 292443. f/h 49 russell hill road, purley t/no SGL40226. Please see image for details of further land (including buildings), ship, aircraft or intellectual property charged.</td>
+      <td>The Mayor and Burgesses of the London Borough of Croydon<<<<<</td>
+   </tr>
+   <tr>
+      <td>00075064</td>
+      <td>CABRINI CHILDREN'S SOCIETY</td>
+      <td>TRUE</td>
+      <td>BROWN, Paul Anthony<<<<<DIBBS, Paul Victor John<<<<<HARVEY BROWNE, Graham Peter<<<<<ROTHON, Nicholas John, Monsignor<<<<<TWIST, Neil Nicholas<<<<<</td>
+      <td>03/09/2014</td>
+      <td>A registered charge</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>New cottages, high street, partridge green, horsham f/h t/no WSX330473. Please see image for details of further land (including buildings), ship, aircraft or intellectual property charged.</td>
+      <td>The Mayor and Burgesses of London Borough of Croydon<<<<<</td>
+   </tr>
+   <tr>
+      <td>00095587</td>
+      <td>JEWISH CHRONICLE LIMITED</td>
+      <td>FALSE</td>
+      <td>EBNER, Sarah<<<<<GRABINER, Stephen<<<<<HARROD, Raymond Jonathan<<<<<MCCARTHY, Gerard Alphonsus<<<<<POLLARD, Stephen Ian<<<<<ROSE, Debbie<<<<<</td>
+      <td>04/12/2012</td>
+      <td>Charge</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>Cash deposit.</td>
+      <td>The Geneva Investment Company Limited<<<<<</td>
+   </tr>
+   <tr>
+      <td>00095587</td>
+      <td>JEWISH CHRONICLE LIMITED</td>
+      <td>FALSE</td>
+      <td>EBNER, Sarah<<<<<GRABINER, Stephen<<<<<HARROD, Raymond Jonathan<<<<<MCCARTHY, Gerard Alphonsus<<<<<POLLARD, Stephen Ian<<<<<ROSE, Debbie<<<<<</td>
+      <td>13/12/2010</td>
+      <td>Mortgage</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>163 hampstead way barnet london t/no MX146360 first fixed charge all moneys from time to time payable to the company under or pursuant to the insurances,the income see image for full details.</td>
+      <td>Jewish Chronicle Pension Trustees Limited<<<<<</td>
+   </tr>
+   <tr>
+      <td>00095587</td>
+      <td>JEWISH CHRONICLE LIMITED</td>
+      <td>FALSE</td>
+      <td>EBNER, Sarah<<<<<GRABINER, Stephen<<<<<HARROD, Raymond Jonathan<<<<<MCCARTHY, Gerard Alphonsus<<<<<POLLARD, Stephen Ian<<<<<ROSE, Debbie<<<<<</td>
+      <td>13/12/2010</td>
+      <td>Chattel mortgage</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>The paintings by the artist david garshen bomberg k/a (I) "valley of la hermida asturias" signed and dates '35 oil canvas measuring 34 inches by 42 inches and (ii) "cornflowers and delphiniums" signed and dated '46 oil on canvas measuring 40 inches by 30 inches,all records,books and other documents see image for full details.</td>
+      <td>Jewish Chronicle Pension Trustees Limited<<<<<</td>
+   </tr>
+   <tr>
+      <td>00095587</td>
+      <td>JEWISH CHRONICLE LIMITED</td>
+      <td>FALSE</td>
+      <td>EBNER, Sarah<<<<<GRABINER, Stephen<<<<<HARROD, Raymond Jonathan<<<<<MCCARTHY, Gerard Alphonsus<<<<<POLLARD, Stephen Ian<<<<<ROSE, Debbie<<<<<</td>
+      <td>13/12/2010</td>
+      <td>Investment security agreement</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>First floating charge all of its claims or rights to or in respect of the deposit,the account,the securities and any investment management agreement,and any proceeds and claims arising from it see image for full details.</td>
+      <td>Jewish Chronicle Pension Trustees Limited<<<<<</td>
+   </tr>
+   <tr>
+      <td>00096055</td>
+      <td>GRACE BAPTIST CHARITIES LIMITED</td>
+      <td>FALSE</td>
+      <td>CLARKSON, Colin James<<<<<HUMPHREY, David<<<<<MILLER, John Grant<<<<<MORTIMER, David James<<<<<O'MARA, Margaret<<<<<OTTLEY, Andrew Aeneas<<<<<SPEAR, Paul Denis<<<<<WOODLEY, Philip Mark<<<<<</td>
+      <td>25/05/2010</td>
+      <td>Legal charge</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>Property k/a 3 ardilaun road highbury london t/n LN43846.</td>
+      <td>Ipswich Building Society<<<<<</td>
+   </tr>
+   <tr>
+      <td>00096055</td>
+      <td>GRACE BAPTIST CHARITIES LIMITED</td>
+      <td>FALSE</td>
+      <td>CLARKSON, Colin James<<<<<HUMPHREY, David<<<<<MILLER, John Grant<<<<<MORTIMER, David James<<<<<O'MARA, Margaret<<<<<OTTLEY, Andrew Aeneas<<<<<SPEAR, Paul Denis<<<<<WOODLEY, Philip Mark<<<<<</td>
+      <td>25/05/2010</td>
+      <td>Legal charge</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>Property k/a 3C petherton road london t/n 303032.</td>
+      <td>Ipswich Building Society<<<<<</td>
+   </tr>
+   <tr>
+      <td>00103844</td>
+      <td>ASPREY HOLDINGS LIMITED</td>
+      <td>FALSE</td>
+      <td>RIGAS, Ioannis<<<<<STANDEN, Daniel<<<<<</td>
+      <td>30/06/2015</td>
+      <td>A registered charge</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>U.S. Bank Trustees Limited<<<<<</td>
+   </tr>
+   <tr>
+      <td>00103844</td>
+      <td>ASPREY HOLDINGS LIMITED</td>
+      <td>FALSE</td>
+      <td>RIGAS, Ioannis<<<<<STANDEN, Daniel<<<<<</td>
+      <td>29/05/2015</td>
+      <td>A registered charge</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>The land at 22 albermarle street, london W1 with title number NGL827040.. All intellectual property listed at schedule 3, part 3 of the instrument.</td>
+      <td>U.S. Bank Trustees Limited<<<<<</td>
+   </tr>
+   <tr>
+      <td>00103844</td>
+      <td>ASPREY HOLDINGS LIMITED</td>
+      <td>FALSE</td>
+      <td>RIGAS, Ioannis<<<<<STANDEN, Daniel<<<<<</td>
+      <td>29/05/2015</td>
+      <td>A registered charge</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>Trademarks: 'purple water' (registration number 3540487) registered on 2/12/2008, 'asprey' (registration number 4259788) registered on 18/12/2012, and all other intellectual property listed in schedule 1 of the instrument.</td>
+      <td>Gordon Brothers Finance Company<<<<<</td>
+   </tr>
+   <tr>
+      <td>00103844</td>
+      <td>ASPREY HOLDINGS LIMITED</td>
+      <td>FALSE</td>
+      <td>RIGAS, Ioannis<<<<<STANDEN, Daniel<<<<<</td>
+      <td>29/05/2015</td>
+      <td>A registered charge</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>Patents: backpack (application/patent no. D517800) filed on 28/3/2006, handbag (application/patent no. D498588) filed on 23/11/2004, and all other intellectual property listed in schedule 1 of the instrument.</td>
+      <td>Gordon Brothers Finance Company<<<<<</td>
+   </tr>
+   <tr>
+      <td>00103844</td>
+      <td>ASPREY HOLDINGS LIMITED</td>
+      <td>FALSE</td>
+      <td>RIGAS, Ioannis<<<<<STANDEN, Daniel<<<<<</td>
+      <td>29/05/2015</td>
+      <td>A registered charge</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>Gordon Brothers Finance Company<<<<<</td>
+   </tr>
+   <tr>
+      <td>00103844</td>
+      <td>ASPREY HOLDINGS LIMITED</td>
+      <td>FALSE</td>
+      <td>RIGAS, Ioannis<<<<<STANDEN, Daniel<<<<<</td>
+      <td>29/05/2015</td>
+      <td>A registered charge</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>Tynedale Likited<<<<<</td>
+   </tr>
+   <tr>
+      <td>00103844</td>
+      <td>ASPREY HOLDINGS LIMITED</td>
+      <td>FALSE</td>
+      <td>RIGAS, Ioannis<<<<<STANDEN, Daniel<<<<<</td>
+      <td>29/05/2015</td>
+      <td>A registered charge</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>Tynedale Limited<<<<<</td>
+   </tr>
+   <tr>
+      <td>00103844</td>
+      <td>ASPREY HOLDINGS LIMITED</td>
+      <td>FALSE</td>
+      <td>RIGAS, Ioannis<<<<<STANDEN, Daniel<<<<<</td>
+      <td>29/05/2015</td>
+      <td>A registered charge</td>
+      <td>outstanding</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>Tynedale Limited<<<<<</td>
+   </tr>
+</table>
+
+<br />
+<br />
+
+</body>
+</html>
